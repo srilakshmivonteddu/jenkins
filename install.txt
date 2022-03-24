@@ -1,0 +1,39 @@
+install and configure jenkins::
+
+
+Install  java and Jenkins on ami instance
+update the ami instance if its new instance
+$ sudo yum update -y
+ for install and running Jenkins we need a java. Install java first
+$ java -version
+If java version below 1.8 you must be upgrade to 1.8 is minimum version is 1.8 
+$ wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-linux-x64.rpm
+
+$ sudo yum install -y jdk-8u141-linux-x64.rpm
+ Now verify java version.
+$ java -version
+
+Now install Jenkins 
+Update the yum package management tool.
+$ sudo yum update -y
+Download the latest Jenkins code package.
+$ sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo
+Import a key file from Jenkins-CI to enable installation from the package.
+$ sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+Install Jenkins.
+$ sudo yum install jenkins -y
+if you get below error 
+
+
+execute below commands
+$ sudo amazon-linux-extras install epel -y
+$ sudo yum update -y
+Start Jenkins as a service.
+$ sudo service jenkins start
+To start the jenkins service at boot-up, you can run.
+$ sudo chkconfig jenkins on
+Access you Jenkins url.
+http://yourserverip:8080/ 
+
+As noted on the user interface, you can find this password in /var/lib/jenkins/secrets/initialAdminPassword. Paste the value into the password box, then choose and continue…
+
