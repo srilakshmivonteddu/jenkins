@@ -1,5 +1,5 @@
 install and configure jenkins::
-
+url:--- https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
 
 Install  java and Jenkins on ami instance
 update the ami instance if its new instance
