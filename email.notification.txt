@@ -1,0 +1,1 @@
+https://netcorecloud.com/tutorials/install-and-configure-email-notifications-in-jenkins/
